@@ -17,6 +17,22 @@ const findSafeOxygenLevel = (planets) =>
       e[e.length - 1] == "%" && parseFloat(e) > 19.5 && parseFloat(e) < 23.5
   );
 
+// SOLUTION
+
+/*
+function findSafeOxygenLevel(oxygenLevels) {
+  const safeLevel = oxygenLevels
+    .filter(level => level.endsWith("%"))
+    .find(level => {
+      level = parseFloat(level.replace("%", ""));
+      const lowerLimit = 19.5;
+      const upperLimit = 23.5;
+      return lowerLimit < level && level < upperLimit;
+    });
+  return safeLevel;
+}
+*/
+
 // [e.length-1] gets the last element of the string "%"
 // parseFloat(e) gets each element and transform in number.
 // at the end it will return only the string with "%"

@@ -17,6 +17,21 @@ function getEligibleStudents(arrayAllStudents) {
   return studentsWhoHaveAttended;
 }
 
+// SOLUTION
+
+/*
+function getEligibleStudents(students) {
+  const eligibleStudents = students.filter(function (student) {
+    const attendanceCount = student[1];
+    return attendanceCount >= 8;
+  });
+  const eligibleNames = eligibleStudents.map(function (student) {
+    return student[0];
+  });
+  return eligibleNames;
+}
+*/
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getEligibleStudents function works", () => {

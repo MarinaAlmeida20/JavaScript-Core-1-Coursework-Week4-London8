@@ -25,6 +25,12 @@ Write a function that:
 const tidyUpString = (arrOfStrings) =>
   arrOfStrings.map((str) => str.trim().replace(/\//g, "").toLowerCase());
 
+// SOLUTION
+
+/*function tidyUpString(arr) {
+  return arr.map(str => str.trim().replace("/", "").toLowerCase());
+} */
+
 /*
 Write a function that:
 - Takes an array and an index as input
@@ -36,6 +42,17 @@ const remove = (array, index) => {
   arr.splice(index, 1);
   return arr;
 };
+
+// SOLUTION
+
+/*
+function remove(arr, index) {
+  // NOTE: The slice is really important, the original array shouldn't be mutated, which splice does.
+  let newArray = arr.slice();
+  newArray.splice(index, 1);
+  return newArray;
+}
+ */
 
 /*
 Write a function that:
@@ -49,6 +66,18 @@ const formatPercentage = (arrOfNumbers) =>
   arrOfNumbers.map((value) =>
     value > 100 ? 100 + "%" : Math.round(value * 100) / 100 + "%"
   );
+
+// SOLUTION
+
+/*
+function formatPercentage(arr) {
+  return arr.map(value => {
+    const cappedValue = Math.min(value, 100);
+    const roundedValue = Math.round(100 * cappedValue) / 100;
+    return `${roundedValue}%`;
+  });
+} 
+*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -25,6 +25,21 @@ function checkCodeIsThere(stringText) {
     : stringText.indexOf(magicWord);
 }
 
+// SOLUTION
+
+/*
+function checkCodeIsThere(stringText) {
+  let magicWord = "code";
+  //edit code below
+  const containsCode = stringText.includes(magicWord);
+  if (containsCode) {
+    return stringText.indexOf(magicWord);
+  } else {
+    return "Not found";
+  }
+}
+*/
+
 /*
   I am new to London and would like to know what transport I can take to different famous locations.
   The input provided contains a list of locations in London. Each of locations is followed by a list
@@ -68,6 +83,16 @@ const getTransportModes = (location) => {
   transport.push(location[2]);
   return transport;
 };
+
+//SOLUTION
+
+/*
+function getTransportModes(locationDetails) {
+  const transportModes = locationDetails.slice(1);
+  return transportModes;
+}
+*/
+
 /*
   Implement the function isAccessibleByTransportMode that
 
@@ -86,6 +111,14 @@ const getTransportModes = (location) => {
 const isAccessibleByTransportMode = (arrayTransport, stringTransports) =>
   arrayTransport.includes(stringTransports);
 
+// SOLUTION
+
+/*
+function isAccessibleByTransportMode(transportModes, choosenTransportMode) {
+  return transportModes.includes(choosenTransportMode);
+}
+*/
+
 /*
   Implement the function getLocationName that
 
@@ -96,6 +129,15 @@ const isAccessibleByTransportMode = (arrayTransport, stringTransports) =>
       e.g: "Tower Bridge"
 */
 const getLocationName = (arrayOfTransports) => arrayOfTransports[0];
+
+// SOLUTION
+
+/*
+function getLocationName(locationDetails) {
+  const locationName = locationDetails[0];
+  return locationName;
+}
+*/
 
 /*
  We arrived at the final method. it won't take long if you use the previously implemented functions wisely.
@@ -135,6 +177,21 @@ function journeyPlanner(locations, transportMode) {
   }
   return newArr;
 }
+
+// SOLUTION
+
+/*
+function journeyPlanner(locations, transportMode) {
+  return locations
+    .filter((location) => {
+      return isAccessibleByTransportMode(location, transportMode);
+    })
+    .map((accessibleLocation) => {
+      return getLocationName(accessibleLocation);
+    });
+}
+
+*/
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

@@ -9,6 +9,12 @@
 const getLanes = (arrayOfStreetNames) =>
   arrayOfStreetNames.filter((e) => e.endsWith("Lane"));
 
+// SOLUTION
+
+/*function getLanes(streetNames) {
+  return streetNames.filter((name) => name.includes("Lane"));
+} */
+
 /* ======= TESTS - DO NOT MODIFY ===== */
 
 test("getLanes function works", () => {
